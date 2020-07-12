@@ -41,7 +41,6 @@ export default (state = initialState, action) => {
                 if (t.done === false) {
                     t.done = !t.done;
                 }
-                // t.done = !t.done;
 
                 return t;
             })
