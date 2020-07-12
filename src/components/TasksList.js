@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Task from "./Task"
 
 class TasksList extends Component {
-
     render() {
         const { 
             onUpdate, 

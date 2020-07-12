@@ -32,7 +32,6 @@ class Header extends Component {
                     <input 
                         onKeyPress={this.createNewTask} 
                         placeholder='What needs to be done?'
-
                         className='newTask'
                     />
 
