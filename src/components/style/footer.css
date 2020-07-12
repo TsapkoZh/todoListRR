@@ -1,0 +1,49 @@
+.footer {
+    display: none;
+    justify-content: space-between;
+    height: 1.3vw;
+    font-size: .5vw;
+    padding: .5vw;
+    border: 0;
+    background-color: rgb(255, 255, 255);
+    border-top: .01vw solid rgba(128, 128, 128, 0.185);
+}
+
+.show {
+    display: flex;
+}
+
+.todoCount {
+    margin: .2vw .7vw;
+    font-size: .8vw;
+}
+
+.filterSwitchBtn {
+    border: .01vw solid rgb(255, 255, 255);
+    border-radius: .2vw;
+    background-color: rgb(255, 255, 255);
+    font-size: .8vw;
+    outline: none;
+    cursor: pointer;
+}
+
+.selected {
+    border-color: rgb(163, 79, 79);
+    border-radius:.2vw;
+}
+
+.clearCompleted {
+    /* display: none; */
+    border: none;
+    outline: none;
+    margin: 0 .9vw;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.185);
+    background-color: rgb(255, 255, 255);
+    transition: .6s;
+    cursor: pointer;
+}
+
+.clearCompleted:hover {
+    color: rgba(70, 22, 22, 0.689); 
+}

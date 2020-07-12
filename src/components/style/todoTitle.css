@@ -1,0 +1,13 @@
+body {
+    background-color: rgb(236, 236, 236);
+}
+
+.todoTitle {
+    margin: 2vw;
+    text-align: center;
+    color: rgb(129, 81, 81);
+    font-family: arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 100;
+    font-size: 6vw;
+    opacity: .3;
+}

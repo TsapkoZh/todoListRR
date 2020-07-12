@@ -1,0 +1,54 @@
+.header {
+    display: flex;
+}
+
+.wrapper {
+    width: 2.5vw;
+}
+
+.allDoneBtn {  
+    display: none;
+    width: 100%;
+    height: 70%;
+    border: none;
+    outline: none;
+    margin: .5vw;
+    background-color: rgb(255, 255, 255);
+    font-size: 1.3vw;
+    opacity: .3;
+    transition: opacity 1s;
+    transform: rotate(-45deg);
+}
+
+.showAllDoneBtn {
+    display: block;
+}
+
+.allDoneBtn:hover {
+    opacity: .6;
+}
+
+.newTask { 
+    width: 25vw;
+    height: 2.5vw;
+    font-size: 1.2vw;
+    margin-left: 1vw;
+    padding: .5vw;
+    outline: none;
+    border: 0;
+}
+
+input::-webkit-input-placeholder {
+    color: rgba(105, 105, 105, 0.295) !important;
+    font-style: italic;
+}
+    
+input:-moz-placeholder {
+    color: rgba(105, 105, 105, 0.295) !important; 
+    font-style: italic;
+}
+    
+input:-ms-input-placeholder {  
+    color: rgba(105, 105, 105, 0.295) !important;
+    font-style: italic;
+}
