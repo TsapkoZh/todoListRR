@@ -4,14 +4,6 @@ import './style/header.css';
 
 class Header extends Component {
 
-    state = {
-        isDone: false,
-    }
-
-    componentDidMount() {
-        this.isDoneEdit();
-    }
-
     createNewTask = e => {
         const trimTitle = e.currentTarget.value;
 
@@ -27,54 +19,28 @@ class Header extends Component {
         }
     }
 
-    handleClickDone = () => {
-        this.props.allDone();
-        this.isDoneEdit();
-        }
-
-    handleClickUndone = () => {
-        this.props.allUndone();
-        this.isDoneEdit();
-    }
-
-    isDoneEdit = () => {
-        const { allTasks, itemsDone } = this.props;
+    handleClick = () => {
+        const { allTasks, itemsDone, allDone, allUndone } = this.props;
 
         if (allTasks === itemsDone) {
-            this.setState({ 
-                isDone: false,
-            });
+            allUndone();
         } else { 
-            this.setState({ 
-                isDone: true,
-            });
+            allDone();
         }
     }
 
     render() {
-        const { isDone } = this.state;
-        const { allTasks, isDoneEdit } = this.props;
+        const { allTasks } = this.props;
 
         return (
             <div className={'header'}>
                 <div className='wrapper'>
-                    {isDone ? (
                     <button 
-                        isDoneEdit={isDoneEdit}
-                        onClick={this.handleClickUndone}
-                        className={allTasks > 0 ? 'showAllDoneBtn allDoneBtn d' : 'allDoneBtn d'}
+                        onClick={this.handleClick}
+                        className={allTasks > 0 ? 'showAllDoneBtn allDoneBtn' : 'allDoneBtn '}
                     >
                         ∟   
                     </button>
-                    ) : (
-                    <button 
-                        isDoneEdit={isDoneEdit}
-                        onClick={this.handleClickDone}
-                        className={allTasks > 0 ? 'showAllDoneBtn allDoneBtn v' : 'allDoneBtn v'}
-                    >
-                        ∟   
-                    </button>
-                    )}
                 </div>
         
                 <input 

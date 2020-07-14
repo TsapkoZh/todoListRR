@@ -7,7 +7,7 @@ import {
     SAVE_EDIT, 
     ALL_DONE, 
     ALL_UNDONE 
-} from "./types";
+} from './types';
 
 export const createTask = task => ({
     type: CREATE_TASK,
@@ -44,4 +44,4 @@ export const allDone = () => ({
 
 export const allUndone = () => ({
     type: ALL_UNDONE,
-})
+});
