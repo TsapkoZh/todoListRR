@@ -1,13 +1,24 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import './style/header.css'
+import './style/header.css';
 
 class Header extends Component {
+
+    state = {
+        isDone: false,
+    }
+
+    componentDidMount() {
+        this.isDoneEdit();
+    }
+
     createNewTask = e => {
-        if (e.key === 'Enter') {
+        const trimTitle = e.currentTarget.value;
+
+        if (e.key === 'Enter' && trimTitle.trim()) {
             const newTask = {
                     id: Date.now().toString(), 
-                    title: e.currentTarget.value,
+                    title: trimTitle,
                     done: false
             };
             this.props.onCreate(newTask);
@@ -16,27 +27,64 @@ class Header extends Component {
         }
     }
 
-    render() {
-        const { allDone, allTasks } = this.props;
-        return (
-                <div className={'header'}>
-                    <div className='wrapper'>
-                        <button 
-                            onClick={allDone}
-                            className={allTasks > 0 ? 'showAllDoneBtn allDoneBtn' : 'allDoneBtn'}
-                        >
-                            ∟
-                        </button>
-                    </div>
-         
-                    <input 
-                        onKeyPress={this.createNewTask} 
-                        placeholder='What needs to be done?'
-                        className='newTask'
-                    />
+    handleClickDone = () => {
+        this.props.allDone();
+        this.isDoneEdit();
+        }
 
+    handleClickUndone = () => {
+        this.props.allUndone();
+        this.isDoneEdit();
+    }
+
+    isDoneEdit = () => {
+        const { allTasks, itemsDone } = this.props;
+
+        if (allTasks === itemsDone) {
+            this.setState({ 
+                isDone: false,
+            });
+        } else { 
+            this.setState({ 
+                isDone: true,
+            });
+        }
+    }
+
+    render() {
+        const { isDone } = this.state;
+        const { allTasks, isDoneEdit } = this.props;
+
+        return (
+            <div className={'header'}>
+                <div className='wrapper'>
+                    {isDone ? (
+                    <button 
+                        isDoneEdit={isDoneEdit}
+                        onClick={this.handleClickUndone}
+                        className={allTasks > 0 ? 'showAllDoneBtn allDoneBtn d' : 'allDoneBtn d'}
+                    >
+                        ∟   
+                    </button>
+                    ) : (
+                    <button 
+                        isDoneEdit={isDoneEdit}
+                        onClick={this.handleClickDone}
+                        className={allTasks > 0 ? 'showAllDoneBtn allDoneBtn v' : 'allDoneBtn v'}
+                    >
+                        ∟   
+                    </button>
+                    )}
                 </div>
+        
+                <input 
+                    onKeyPress={this.createNewTask} 
+                    placeholder='What needs to be done?'
+                    className='newTask'
+                />
+            </div>
         );
     }
 }
+
 export default Header;

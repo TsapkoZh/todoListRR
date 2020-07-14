@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import './style/task.css'
+import React, { Component } from 'react';
+
+import './style/task.css';
 
 class Task extends Component {
 
@@ -10,16 +11,22 @@ class Task extends Component {
 
     handleDelete = () => {
         const { id, onDelete } = this.props;
+
         onDelete(id);
     }
 
     handleUpdate = () => {
         const { id, onUpdate } = this.props;
+
         onUpdate(id);
     }
 
-    handleChange = (event) => {
-        this.setState({value: event.target.value});
+    handleChange = event => {
+        const trimTitle = event.currentTarget.value;
+
+        if (trimTitle.trim()) {
+            this.setState({value: trimTitle});
+        }
     }
 
     handleDblClick = () => {
@@ -63,18 +70,19 @@ class Task extends Component {
                     onClick={this.handleUpdate} 
                 />
 
-                <div className="text">
+                <div className='text'>
                     {isEdit ? (                 
                         <input 
-                            type="text" 
+                            type='text'
                             value={this.state.value} 
                             onChange={this.handleChange}
                             onBlur={this.handleSave}
                             autoFocus={true}
+                            className='editTask'
                         />
                         ) : (
                         <p 
-                            className="text"
+                            className={done ? 'text done' : 'text'}
                             onDoubleClick={this.handleDblClick}
                         >
                             {title}

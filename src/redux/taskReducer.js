@@ -5,7 +5,9 @@ import {
     CLEAR_COMPLETED,
     SAVE_EDIT,
     ALL_DONE,
+    ALL_UNDONE,
 } from "./types"
+// import { allDone } from "./actions";
 
 const initialState = [];
 
@@ -39,6 +41,15 @@ export default (state = initialState, action) => {
         case ALL_DONE: 
             return state.map(t => {
                 if (t.done === false) {
+                    t.done = !t.done;
+                }
+
+                return t;
+            })
+
+        case ALL_UNDONE:
+            return state.map(t => {
+                if (t.done === true) {
                     t.done = !t.done;
                 }
 

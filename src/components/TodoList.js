@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import Footer from "./Footer";
-import Header from "./Header";
-import TasksList from "./TasksList";
+import Footer from './Footer';
+import Header from './Header';
+import TasksList from './TasksList';
 
 import { 
     createTask,
@@ -14,9 +14,10 @@ import {
     clearCompleted,
     saveEdit,
     allDone,
-} from "../redux/actions";
+    allUndone,
+} from '../redux/actions';
 
-import './style/todoList.css'
+import './style/todoList.css';
 
 class ToDoList extends Component {
 
@@ -27,20 +28,25 @@ class ToDoList extends Component {
             allTasks,
             createNewTask,
             allDone,
+            allUndone,
             updateTask, 
             deleteTask,
             itemsLeft,
+            itemsDone,
             changeFilter, 
             clearCompleted,
             saveEdit,
         } = this.props;
 
         return (
-            <div className="todoList">
+            <div className='todoList'>
                 <Header 
                     onCreate={createNewTask} 
                     allDone={allDone}
+                    allUndone={allUndone}
                     allTasks={allTasks}
+                    itemsLeft={itemsLeft}
+                    itemsDone={itemsDone}
                 />
                 <TasksList 
                     tasks={tasks} 
@@ -79,6 +85,7 @@ const mapStateToProps = state => ({
     tasks: filterTask(state),
     filter: state.filter,
     itemsLeft: state.tasks.filter(t => !t.done).length,
+    itemsDone: state.tasks.filter(t => t.done).length,
     allTasks: state.tasks.length,
 });
 
@@ -91,6 +98,7 @@ const mapDispatchToProps = dispatch =>
     clearCompleted,
     saveEdit,
     allDone,
+    allUndone,
   }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(ToDoList);

@@ -1,4 +1,13 @@
-import { CREATE_TASK, CHANGE_FILTER, UPDATE_TASK, DELETE_TASK, CLEAR_COMPLETED, SAVE_EDIT, ALL_DONE } from "./types";
+import { 
+    CREATE_TASK, 
+    CHANGE_FILTER, 
+    UPDATE_TASK, 
+    DELETE_TASK, 
+    CLEAR_COMPLETED, 
+    SAVE_EDIT, 
+    ALL_DONE, 
+    ALL_UNDONE 
+} from "./types";
 
 export const createTask = task => ({
     type: CREATE_TASK,
@@ -31,4 +40,8 @@ export const saveEdit = (id, title) => ({
 
 export const allDone = () => ({
     type: ALL_DONE,
+});
+
+export const allUndone = () => ({
+    type: ALL_UNDONE,
 })

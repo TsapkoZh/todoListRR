@@ -33,10 +33,10 @@
 }
 
 .clearCompleted {
-    /* display: none; */
     border: none;
     outline: none;
     margin: 0 .9vw;
+    font-size: .8vw;
     padding: 0;
     color: rgba(0, 0, 0, 0.185);
     background-color: rgb(255, 255, 255);

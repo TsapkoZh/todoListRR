@@ -5,3 +5,4 @@ export const CHANGE_FILTER = 'CHANGE_FILTER';
 export const CLEAR_COMPLETED = 'CLEAR_COMPLETED';
 export const SAVE_EDIT = 'SAVE_EDIT';
 export const ALL_DONE = 'ALL_DONE';
+export const ALL_UNDONE = 'ALL_UNDONE';

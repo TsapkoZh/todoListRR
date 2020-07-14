@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class Button extends Component {
 
     handleClick = () => {
-        const { onClick, cbData } = this.props
-        onClick(cbData)
+        const { onClick, cbData } = this.props;
+        onClick(cbData);
     }
 
     render() {

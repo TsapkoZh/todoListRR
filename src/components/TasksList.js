@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import Task from "./Task"
+import React, { Component } from 'react';
+import Task from './Task';
 
 class TasksList extends Component {
     render() {
@@ -10,7 +10,7 @@ class TasksList extends Component {
         } = this.props;
         
         return (
-            <div className="tasks">
+            <div className='tasks'>
                 {
                     this.props.tasks.map(({id, title, done}) => (
                         <Task

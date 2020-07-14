@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import ToDoList from './TodoList';
-import './style/todoTitle.css'
 
 class App extends Component {
     render() {
@@ -9,9 +8,8 @@ class App extends Component {
                 <h1 className='todoTitle'>todos</h1>
                 <ToDoList />
             </div>
-
         );
     }
 }
 
-export default App
+export default App;

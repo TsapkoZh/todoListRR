@@ -50,6 +50,11 @@
     transition: .5s;
 }
 
+.done {
+    text-decoration: line-through;
+    opacity: .7;
+}
+
 .wrapperBtnDelete{
     cursor: pointer;
     transition: opacity .5s;
@@ -72,4 +77,13 @@
 
 .delete:hover {
     opacity: 1;
+}
+
+.editTask {
+    width: 22vw;
+    height: 2.05vw;
+    font-size: 1.2vw;
+    padding: .5vw;
+    outline: none;
+    border: .1vw solid rgb(189, 100, 94);
 }

@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App.js';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import rootReducer from './redux/rootReducer.js';
 import { devToolsEnhancer } from 'redux-devtools-extension';
+
+import App from './components/App.js';
+import rootReducer from './redux/rootReducer.js';
+
+import './components/style/todoTitle.css';
+
 
 const persistedState = localStorage.getItem('reduxState') 
                        ? JSON.parse(localStorage.getItem('reduxState'))
