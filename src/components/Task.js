@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './style/task.css';
+import './style/task.scss';
 
 class Task extends Component {
 

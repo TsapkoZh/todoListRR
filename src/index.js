@@ -7,7 +7,7 @@ import { devToolsEnhancer } from 'redux-devtools-extension';
 import App from './components/App.js';
 import rootReducer from './redux/rootReducer.js';
 
-import './components/style/todoTitle.css';
+// import './components/style/todoTitle.scss';
 
 
 const persistedState = localStorage.getItem('reduxState') 

@@ -1,3 +1,5 @@
+@import "media.scss";
+
 .footer {
     display: none;
     justify-content: space-between;
@@ -7,6 +9,13 @@
     border: 0;
     background-color: rgb(255, 255, 255);
     border-top: .01vw solid rgba(128, 128, 128, 0.185);
+
+    @include _768  {
+        height: 15px;
+        font-size: 6.2px;
+        padding: 3.8px;
+        border-top: 1px solid rgba(128, 128, 128, 0.185);
+    }
 }
 
 .show {
@@ -16,6 +25,11 @@
 .todoCount {
     margin: .2vw .7vw;
     font-size: .8vw;
+
+    @include _768  {
+        margin: 1.5px 5.3px;
+        font-size: 6.2px;
+    }
 }
 
 .filterSwitchBtn {
@@ -25,6 +39,12 @@
     font-size: .8vw;
     outline: none;
     cursor: pointer;
+
+    @include _768  {
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 2px;
+        font-size: 6.2px;
+    }
 }
 
 .selected {
@@ -42,8 +62,12 @@
     background-color: rgb(255, 255, 255);
     transition: .6s;
     cursor: pointer;
-}
+        &:hover {
+            color: rgba(70, 22, 22, 0.689); 
+        }
 
-.clearCompleted:hover {
-    color: rgba(70, 22, 22, 0.689); 
+    @include _768  {
+        margin: 0 7px;
+        font-size: 6.2px;
+    }
 }

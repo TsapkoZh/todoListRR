@@ -2,7 +2,7 @@ import React, { Component }  from 'react';
 
 import Button from './Button';
 
-import './style/footer.css'
+import './style/footer.scss'
 
 const filtersList = [
     'all',

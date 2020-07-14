@@ -17,7 +17,7 @@ import {
     allUndone,
 } from '../redux/actions';
 
-import './style/todoList.css';
+import './style/todoList.scss';
 
 class ToDoList extends Component {
 

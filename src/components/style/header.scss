@@ -1,9 +1,19 @@
+@import "media.scss";
+
 .header {
     display: flex;
+
+    @include _768  {
+        width: 245px;
+     }
 }
 
 .wrapper {
     width: 2.5vw;
+
+    @include _768  {
+        width: 26px;
+     }
 }
 
 .allDoneBtn {  
@@ -18,14 +28,18 @@
     opacity: .3;
     transition: opacity 1s;
     transform: rotate(-45deg);
+        &:hover {
+            opacity: .6;
+        }
+
+    @include _768  {
+        margin: 3.8px;
+        font-size: 9.5px;
+    }
 }
 
 .showAllDoneBtn {
     display: block;
-}
-
-.allDoneBtn:hover {
-    opacity: .6;
 }
 
 .newTask { 
@@ -36,6 +50,14 @@
     padding: .5vw;
     outline: none;
     border: 0;
+
+    @include _768  {
+        width: 199px;
+        height: 26px;
+        font-size: 9px;
+        margin-left: 7.6px;
+        padding: 3.8px;
+    }
 }
 
 input::-webkit-input-placeholder {

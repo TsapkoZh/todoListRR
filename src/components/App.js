@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import ToDoList from './TodoList';
 
+import './style/todoTitle.scss';
+
+
 class App extends Component {
     render() {
         return (
