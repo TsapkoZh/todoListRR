@@ -6,7 +6,7 @@
 	justify-content: space-between;
 	align-items: center;
 	padding: .5vw 1vw;
-	border-top: .1vw solid $mercury;
+	border-top: .06vw solid $mercury;
 		&:hover .wrapperBtnDelete {
 			opacity: 1;
 		}
@@ -23,7 +23,7 @@
 	border: .01vw solid $jewel;
 	border-radius: 50%;
 	background-color: $white;
-	// background-image: url(./images/greenCheck.png);
+	background-image: url(../images/greenCheck.png);
 	background-position: center;
 	background-size: 70% 90%;
 	background-repeat: no-repeat;
@@ -81,7 +81,7 @@
 	}
 }
 
-.wrapperBtnDelete{
+.wrapperBtnDelete {
 	cursor: pointer;
 	transition: opacity .5s;
 	opacity: 0;
