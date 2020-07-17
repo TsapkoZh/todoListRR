@@ -1,25 +1,25 @@
 import { 
-	CREATE_TASK, 
-	UPDATE_TASK, 
-	DELETE_TASK, 
+	CREATE_TODO, 
+	UPDATE_TODO, 
+	DELETE_TODO, 
 	CLEAR_COMPLETED, 
 	SAVE_EDIT, 
 	ALL_DONE, 
 	ALL_UNDONE 
 } from './types';
 
-export const createTask = task => ({
-	type: CREATE_TASK,
+export const createTodo = task => ({
+	type: CREATE_TODO,
 	payload: task,
 });
 
-export const updateTask = id => ({
-	type: UPDATE_TASK,
+export const updateTodo = id => ({
+	type: UPDATE_TODO,
 	payload: id,
 });
 
-export const deleteTask = id => ({
-	type: DELETE_TASK,
+export const deleteTodo = id => ({
+	type: DELETE_TODO,
 	payload: id,
 });
 

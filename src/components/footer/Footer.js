@@ -16,13 +16,13 @@ class Footer extends Component {
 		const { 
 				filter,
 				clearCompleted,
-				allTasks,
+				allTodos,
 				itemsLeft,
 				onFilterChanged,
 		} = this.props;
 	
 		return (
-			<div className={allTasks > 0 ? 'show footer' : 'footer'} >
+			<div className={allTodos > 0 ? 'show footer' : 'footer'} >
 				<span className='todoCount'>{itemsLeft} items left</span>
 
 				<div className='filterBtns'>
@@ -50,7 +50,7 @@ class Footer extends Component {
 }
 
 Footer.propTypes = {
-	allTasks: PropTypes.number.isRequired,
+	allTodos: PropTypes.number.isRequired,
 	itemsLeft: PropTypes.number.isRequired,
 	filter: PropTypes.string.isRequired,
 	onFilterChanged: PropTypes.func,

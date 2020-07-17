@@ -13,7 +13,7 @@ class TodoListItems extends Component {
 		return (
 			<div className='todos'>
 				{
-					this.props.tasks.map(({id, title, done}) => (
+					this.props.todos.map(({id, title, done}) => (
 						<Todo
 							key={id}
 							id={id}

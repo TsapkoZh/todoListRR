@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './header.scss';
 
 class Header extends Component {
-	createNewTask = e => {
+	createNewTodo = e => {
 		const trimTitle = e.currentTarget.value;
 
 		if (e.key === 'Enter' && trimTitle.trim()) {
@@ -14,22 +14,15 @@ class Header extends Component {
 							done: false,
 			};
 			this.props.onCreate(newTask);
-		console.log(newTask, 'newTask')
-
 
 			e.currentTarget.value = '';
 		}
 	}
 
 	handleClick = () => {
-		const { allTasks, itemsDone, allDone, allUndone } = this.props;
+		const { allTodos, itemsDone, allDone, allUndone } = this.props;
 
-		console.log(allTasks, 'allTasks')
-		console.log(itemsDone, 'itemsDone')
-		console.log(allDone, 'allDone')
-		console.log(allUndone, 'allUndone')
-
-		if (allTasks === itemsDone) {
+		if (allTodos === itemsDone) {
 			allUndone();
 		} else { 
 			allDone();
@@ -37,21 +30,21 @@ class Header extends Component {
 	}
 
 	render() {
-		const { allTasks } = this.props;
+		const { allTodos } = this.props;
 
 		return (
 			<div className={'header'}>
 				<div className='wrapper'>
 					<button 
 						onClick={this.handleClick}
-						className={allTasks > 0 ? 'showAllDoneBtn allDoneBtn' : 'allDoneBtn '}
+						className={allTodos > 0 ? 'showAllDoneBtn allDoneBtn' : 'allDoneBtn '}
 					>
 						∟   
 					</button>
 				</div>
 
 				<input 
-					onKeyPress={this.createNewTask} 
+					onKeyPress={this.createNewTodo} 
 					placeholder='What needs to be done?'
 					className='newTask'
 				/>
@@ -61,8 +54,8 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-	createNewTask: PropTypes.func,
-	allTasks: PropTypes.number,
+	createNewTodo: PropTypes.func,
+	allTodos: PropTypes.number,
 	itemsDone: PropTypes.number,
 	allDone: PropTypes.func,
 	allUndone: PropTypes.func,

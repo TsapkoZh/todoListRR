@@ -1,7 +1,7 @@
 import { 
-	CREATE_TASK,
-	UPDATE_TASK,
-	DELETE_TASK, 
+	CREATE_TODO,
+	UPDATE_TODO,
+	DELETE_TODO, 
 	CLEAR_COMPLETED,
 	SAVE_EDIT,
 	ALL_DONE,
@@ -12,10 +12,10 @@ const initialState = [];
 
 export default (state = initialState, action) => {
 	switch (action.type) {
-		case CREATE_TASK: 
+		case CREATE_TODO: 
 			return [...state, action.payload];
 
-		case UPDATE_TASK:
+		case UPDATE_TODO:
 			return state.map(t => {
 				if (t.id === action.payload) {
 					t.done = !t.done;
@@ -23,7 +23,7 @@ export default (state = initialState, action) => {
 				return t;
 			})
 
-		case DELETE_TASK:
+		case DELETE_TODO:
 			return state.filter(t =>(t.id !== action.payload));
 
 		case CLEAR_COMPLETED:

@@ -8,9 +8,9 @@ import Header from '../header/Header';
 import TodoListItems from '../todoListItems/TodoListItems';
 
 import { 
-	createTask,
-	updateTask, 
-	deleteTask, 
+	createTodo,
+	updateTodo, 
+	deleteTodo, 
 	clearCompleted,
 	saveEdit,
 	allDone,
@@ -23,14 +23,14 @@ import './todoList.scss';
 class ToDoList extends Component {
 	render() {
 		const { 
-			tasks,
+			todos,
 			filter,
-			allTasks,
-			createNewTask,
+			allTodos,
+			createNewTodo,
 			allDone,
 			allUndone,
-			updateTask, 
-			deleteTask,
+			updateTodo, 
+			deleteTodo,
 			itemsLeft,
 			itemsDone,
 			changeFilter, 
@@ -38,28 +38,28 @@ class ToDoList extends Component {
 			saveEdit,
 		} = this.props;
 
-		console.log(tasks, 'tasks')
+		console.log(todos, 'todos')
 
 	return (
 		<div className='todoList'>
 			<Header 
-				onCreate={createNewTask} 
+				onCreate={createNewTodo} 
 				allDone={allDone}
 				allUndone={allUndone}
-				allTasks={allTasks}
+				allTodos={allTodos}
 				itemsLeft={itemsLeft}
 				itemsDone={itemsDone}
 			/>
 			<TodoListItems 
-				tasks={tasks} 
-				onUpdate={updateTask}
-				onDelete={deleteTask}
+				todos={todos} 
+				onUpdate={updateTodo}
+				onDelete={deleteTodo}
 				onSaveEdit={saveEdit}
 			/>
 
 			<Footer 
 				filter={filter} 
-				allTasks={allTasks}
+				allTodos={allTodos}
 				itemsLeft={itemsLeft}
 				onFilterChanged={changeFilter} 
 				clearCompleted={clearCompleted}
@@ -70,32 +70,32 @@ class ToDoList extends Component {
 }
 
 const filterTask = state => {
-	const { filter, tasks } = state;
+	const { filter, todos } = state;
 
 	switch(filter) {
 		case 'active':
-			return tasks.filter(t => !t.done);
+			return todos.filter(t => !t.done);
 
 		case 'completed': 
-			return tasks.filter(t => t.done);
+			return todos.filter(t => t.done);
 
-		default: return tasks
+		default: return todos
 	}
 }
 
 const mapStateToProps = state => ({
-	tasks: filterTask(state),
+	todos: filterTask(state),
 	filter: state.filter,
-	itemsLeft: state.tasks.filter(t => !t.done).length,
-	itemsDone: state.tasks.filter(t => t.done).length,
-	allTasks: state.tasks.length,
+	itemsLeft: state.todos.filter(t => !t.done).length,
+	itemsDone: state.todos.filter(t => t.done).length,
+	allTodos: state.todos.length,
 });
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({
-    createNewTask: createTask,
-    updateTask,
-    deleteTask,
+    createNewTodo: createTodo,
+    updateTodo,
+    deleteTodo,
     changeFilter,
     clearCompleted,
     saveEdit,
@@ -104,20 +104,20 @@ const mapDispatchToProps = dispatch =>
 	}, dispatch);
 	
 ToDoList.propTypes = {
-	createNewTask: PropTypes.func,
-	tasks: PropTypes.arrayOf(PropTypes.shape({
+	createNewTodo: PropTypes.func,
+	todos: PropTypes.arrayOf(PropTypes.shape({
 		id: PropTypes.string,
 		title: PropTypes.string,
 		done: PropTypes.bool,
 	})),
-	allTasks: PropTypes.number.isRequired,
+	allTodos: PropTypes.number.isRequired,
 	itemsDone: PropTypes.number.isRequired,
 	itemsLeft: PropTypes.number.isRequired,
 	filter: PropTypes.string.isRequired,
 	allDone: PropTypes.func,
 	allUndone: PropTypes.func,
-	updateTask: PropTypes.func,
-	deleteTask: PropTypes.func,
+	updateTodo: PropTypes.func,
+	deleteTodo: PropTypes.func,
 	saveEdit: PropTypes.func,
 	changeFilter: PropTypes.func,
 	clearCompleted: PropTypes.func,
