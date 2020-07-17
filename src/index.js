@@ -4,11 +4,8 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { devToolsEnhancer } from 'redux-devtools-extension';
 
-import App from './components/App.js';
+import App from './components/app/App.js';
 import rootReducer from './redux/rootReducer.js';
-
-// import './components/style/todoTitle.scss';
-
 
 const persistedState = localStorage.getItem('reduxState') 
                        ? JSON.parse(localStorage.getItem('reduxState'))
@@ -17,13 +14,13 @@ const persistedState = localStorage.getItem('reduxState')
 const store = createStore(rootReducer, persistedState, devToolsEnhancer());
 
 store.subscribe(()=>{
-    localStorage.setItem('reduxState', JSON.stringify(store.getState()))
+	localStorage.setItem('reduxState', JSON.stringify(store.getState()))
 })
 
 const app = (
-    <Provider store={ store }>
-        <App />
-    </Provider>
+	<Provider store={ store }>
+		<App />
+	</Provider>
 )
 
 ReactDOM.render(app , document.getElementById('root'));
