@@ -1,0 +1,26 @@
+@import '../styles/color.scss';
+
+.tableHeader {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.tableCell {
+  border: 1px solid $black;
+  border-left: $white;
+  margin: 0;
+  padding: 2px 0;
+}
+
+.right {
+  border-right: $white;
+}
+
+.tableCellTotal {
+  text-align: right;
+  padding-right: 10px;
+  border-bottom: $white;
+}

@@ -1,8 +1,9 @@
 import { combineReducers } from "redux";
-import todoReducer from "./todo/todoReducer";
-import filterReducer from "./filter/filterReducer";
+
+import documentHeaderReducer from "./documentHeader/documentHeaderReducer.js";
+import productReducer from "./product/productReducer.js";
 
 export default combineReducers({
-	todos: todoReducer,
-	filter: filterReducer,
+	documentHeader: documentHeaderReducer,
+	products: productReducer
 })

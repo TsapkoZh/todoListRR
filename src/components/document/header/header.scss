@@ -1,0 +1,69 @@
+@import '../styles/color.scss';
+
+.date {
+ display: flex;
+ flex-direction: row;
+ justify-content: flex-end;
+ margin-bottom: 16px;
+}
+
+.dateDay {
+  display: block;
+  width: 15px;
+  text-align: center;
+  border-bottom: 1px solid $black;
+}
+
+.dateMonth {
+  display: block;
+  width: 75px;
+  text-align: center;
+  border-bottom: 1px solid $black;
+}
+
+.dateYear {
+  display: block;
+  width: 35px;
+  margin-left: 5px;
+  text-align: center;
+  border-bottom: 1px solid $black;
+}
+
+.title {
+  display: flex;
+  margin: 0 auto;
+  width: 260px;
+}
+
+.invoiceNumber {
+  display: block;
+  width: 90px;
+  padding-left: 10px;
+  border-bottom: 1px solid $black;
+}
+
+.toWhom {
+  display: flex;
+  flex-direction: row;
+}
+
+.toWhomField {
+  display: block;
+  width: 450px;
+  margin-left: 5px;
+  padding-left: 10px;
+  border-bottom: 1px solid $black;
+}
+
+.fromWhom {
+  display: flex;
+  flex-direction: row;
+}
+
+.fromWhomField {
+  display: block;
+  width: 395px;
+  margin-left: 5px;
+  padding-left: 10px;
+  border-bottom: 1px solid $black;
+}
