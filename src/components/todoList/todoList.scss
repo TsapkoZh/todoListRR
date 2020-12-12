@@ -1,0 +1,20 @@
+@import '../styles/media.scss';
+@import '../styles/color.scss';
+
+.todoList {
+	width: 32vw;
+	margin: 4vw auto;
+	background-color: $white;
+	background: $white;
+	box-shadow:
+		0 .1vw .1vw rgba(0,0,0,0.15),
+		0 .55vw 0 -.22vw rgb(255, 255, 255),
+		0 .55vw .1vw -.2vw rgba(0,0,0,0.15),
+		0 1.1vw 0 -.55vw rgb(255, 255, 255),
+		0 1.1vw .1vw -.5vw rgba(0,0,0,0.15);
+
+	@include _768  {
+		width: 245px;
+		margin: 30px auto;
+	}
+}

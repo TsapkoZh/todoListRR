@@ -1,0 +1,21 @@
+@import '../styles/media.scss';
+@import '../styles/color.scss';
+
+body {
+  background-color: rgb(236, 236, 236);
+}
+
+.todoTitle {
+	margin: 2vw;
+	text-align: center;
+	color: $contessa;
+	font-family: arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-weight: 100;
+	font-size: 6vw;
+	opacity: .3;
+
+	@include _768  {
+		margin: 15px;
+		font-size: 46px;
+	}
+}

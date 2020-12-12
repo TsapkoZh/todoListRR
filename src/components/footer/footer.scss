@@ -1,0 +1,74 @@
+@import '../styles/media.scss';
+@import '../styles/color.scss';
+
+.footer {
+	display: none;
+	justify-content: space-between;
+	height: 1.3vw;
+	font-size: .5vw;
+	padding: .5vw;
+	border: 0;
+	background-color: $white;
+	border-top: .01vw solid $mercury;
+
+	@include _768  {
+		height: 15px;
+		font-size: 6.2px;
+		padding: 3.8px;
+		border-top: 1px solid $mercury;
+	}
+}
+
+.show {
+	display: flex;
+}
+
+.todoCount {
+	margin: .2vw .7vw;
+	font-size: .8vw;
+
+	@include _768  {
+		margin: 1.5px 5.3px;
+		font-size: 6.2px;
+	}
+}
+
+.filterSwitchBtn {
+	border: .01vw solid $white;
+	border-radius: .2vw;
+	background-color: $white;
+	font-size: .8vw;
+	outline: none;
+	cursor: pointer;
+
+	@include _768  {
+		border: 1px solid $white;
+		border-radius: 2px;
+		font-size: 6.2px;
+	}
+}
+
+.selected {
+	border-color: $contessa;
+	border-radius:.2vw;
+}
+
+.clearCompleted {
+	border: none;
+	outline: none;
+	margin: 0 .9vw;
+	font-size: .8vw;
+	padding: 0;
+	color: $mercury;
+	background-color: $white;
+	transition: color .6s;
+	cursor: pointer;
+		&:hover {
+			color: $contessa; 
+		}
+
+	@include _768  {
+		margin: 0 7px;
+		font-size: 6.2px;
+	}
+}
